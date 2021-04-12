@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pmchancrinmicroservicedemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pmchancrinmicroservicedemo
+  template:
+    metadata:
+      labels:
+        app: pmchancrinmicroservicedemo 
+    spec:
+      containers:
+        - name: pmchancrinmicroservicedemo 
+          image: acrdemovacd.azurecr.io/pmchancrinmicroservicedemo
+          ports:
+          - containerPort: 80
